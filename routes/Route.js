@@ -32,6 +32,17 @@ router.get('/cidades/:id', (req, res) =>{
     return res.json([cidades[id]]);
 });
 
+// rota para o formulário
+router.get('/cidades', function(req, res) {
+    res.render('form');
+});
+
+// Parâmetro da lista
+router.get('/cidades/:id', (req, res) =>{
+    let id = req.params.id;
+    return res.json([cidades[id]]);
+});
+
 // rota POST para envio de novas cidades
 router.post('/cidades/cadastrar', (req, res) =>{
     let nome = req.body.nome;
@@ -39,10 +50,6 @@ router.post('/cidades/cadastrar', (req, res) =>{
     return res.json([cidades[(cidades.length - 1)]]);
 });
 
-// rota para o formulário
-router.get('/cidades', (req, res) =>{
-    res.render('form');
-});
 
 // exportação do modulo
 module.exports = router;
