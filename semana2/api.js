@@ -32,7 +32,7 @@ app.get("/", (req, res) =>{
 app.post("/Cadastrar", funcionarioController.FuncionarioCreate); //essa rota vai chamar a função para criar o objeto funcionario e vai enviar para o controller
 
 //rota de read
-app.get("/Funcionarios", funcionarioController.FuncionarioListar);
+app.get("/Funcionarios/:id?", funcionarioController.FuncionarioListar);
 
 //rota de update
 app.put("/Funcionarios/:id", funcionarioController.FuncionarioUpdate);

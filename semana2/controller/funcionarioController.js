@@ -1,4 +1,5 @@
 //importação de modulo
+const { where } = require("sequelize");
 const Funcionario = require("../model/funcionarioModel");
 
 //importação de informações da classe
@@ -26,10 +27,18 @@ module.exports = class funcionarioController{ //tudo que estiver aqui dentro ser
 
     //Read
     static async FuncionarioListar(req, res){
-        const funcionario = await Funcionario.findAll({ //executa a listagem 
-            raw: true //listagem de todo mundo 
-        });
-        res.json(funcionario) //retorno em via json
+        const matricula = req.params.id;
+        if(matricula){
+            const funcionario = await Funcionario.findOne({
+                where: {matricula: matricula}
+            });
+            res.json(funcionario)
+        } else {
+            const funcionario = await Funcionario.findAll({ //executa a listagem 
+                raw: true //listagem de todo mundo 
+            });
+            res.json(funcionario) //retorno em via json
+        }
     }
 
     //Update
