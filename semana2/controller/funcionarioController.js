@@ -2,7 +2,7 @@
 const Funcionario = require('../model/funcionarioModel');
 
 //importação de informações da classe
-module.exports = class funcionarioConstroller{ //tudo que estiver aqui dentro será usado pela aplicação
+module.exports = class funcionarioController{ //tudo que estiver aqui dentro será usado pela aplicação
     //Create
     static async FuncionarioCreate(req, res){
         let nome = req.body.nome;

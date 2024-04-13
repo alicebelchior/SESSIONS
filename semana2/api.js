@@ -29,15 +29,15 @@ app.get("/", (req, res) =>{
 });
 
 //rota de create
-app.post('/Cadastrar', funcionarioConstroller.FuncionarioCreate); //essa rota vai chamar a função para criar o objeto funcionario e vai enviar para o controller
+app.post('/Cadastrar', funcionarioController.FuncionarioCreate); //essa rota vai chamar a função para criar o objeto funcionario e vai enviar para o controller
 
 //rota de read
-app.get('/Funcionarios', funcionarioConstroller.FuncionarioListar);
+app.get('/Funcionarios', funcionarioController.FuncionarioListar);
 
 //rota de update
-app.put('/Funcionarios/:id', funcionarioConstroller.FuncionarioUpdate);
+app.put('/Funcionarios/:id', funcionarioController.FuncionarioUpdate);
 
 //roda de delete
-app.delete('/Funcionarios/:id', funcionarioConstroller.FuncionarioDelete)
+app.delete('/Funcionarios/:id', funcionarioController.FuncionarioDelete)
 
 app.listen(3000);
