@@ -7,16 +7,16 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 //bibliotecas e módulos
-const database = require('./db/db');
-const Funcionario = require('./model/funcionarioModel');
-const funcionarioConstroller = require('./controller/funcionarioController');
+const database = require("./db/db");
+const Funcionario = require("./model/funcionarioModel");
+const funcionarioController = require("./controller/funcionarioController");
 
 //sincronismo com o bd
 try{
     database.sync().then(() =>{});
 }
 catch(erro) {
-    console.log('Houve uma falha ao sincronizar com o banco de dados', erro);
+    console.log("Houve uma falha ao sincronizar com o banco de dados", erro);
 }
 
 //rota principal
@@ -29,15 +29,15 @@ app.get("/", (req, res) =>{
 });
 
 //rota de create
-app.post('/Cadastrar', funcionarioController.FuncionarioCreate); //essa rota vai chamar a função para criar o objeto funcionario e vai enviar para o controller
+app.post("/Cadastrar", funcionarioController.FuncionarioCreate); //essa rota vai chamar a função para criar o objeto funcionario e vai enviar para o controller
 
 //rota de read
-app.get('/Funcionarios', funcionarioController.FuncionarioListar);
+app.get("/Funcionarios", funcionarioController.FuncionarioListar);
 
 //rota de update
-app.put('/Funcionarios/:id', funcionarioController.FuncionarioUpdate);
+app.put("/Funcionarios/:id", funcionarioController.FuncionarioUpdate);
 
 //roda de delete
-app.delete('/Funcionarios/:id', funcionarioController.FuncionarioDelete)
+app.delete("/Funcionarios/:id", funcionarioController.FuncionarioDelete);
 
 app.listen(3000);

@@ -1,5 +1,5 @@
 //importação de modulo
-const Funcionario = require('../model/funcionarioModel');
+const Funcionario = require("../model/funcionarioModel");
 
 //importação de informações da classe
 module.exports = class funcionarioController{ //tudo que estiver aqui dentro será usado pela aplicação
@@ -20,7 +20,7 @@ module.exports = class funcionarioController{ //tudo que estiver aqui dentro ser
         await Funcionario.create(funcionario);
         //retorno para o usuario/solicitante
         res.json({
-            message: 'Cadastro realizado com sucesso!'
+          message: "Cadastro realizado com sucesso!",
         });
     }
 
@@ -53,9 +53,10 @@ module.exports = class funcionarioController{ //tudo que estiver aqui dentro ser
         await Funcionario.update(funcionario, {
             where: {matricula: matricula}
         });
-        res.json({ //retorno se tiver tudo ok
-            message: 'Cadastro atualizado com sucesso!'
-        })
+        res.json({
+          //retorno se tiver tudo ok
+          message: "Cadastro atualizado com sucesso!",
+        });
     }
 
     //Delete
@@ -66,7 +67,7 @@ module.exports = class funcionarioController{ //tudo que estiver aqui dentro ser
             where: {matricula: matricula}
         });
         res.json({
-            message: 'Funcionário excluído com sucesso!'
+          message: "Funcionário excluído com sucesso!",
         });
     }
 }
