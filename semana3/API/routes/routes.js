@@ -7,9 +7,9 @@ const usuarioController = require("../controller/usuarioController");
 const tarefaController = require("../controller/tarefaController");
 
 //requisições http principal
-router.get("/", (req, res) =>{
+router.get("/", (req, res) => {
     return res.json({
-        message: "Sistema de Lista de Tarefas"
+        message: "Sistema de Lista de Tarefas",
     });
 });
 
@@ -33,7 +33,7 @@ router.delete("/usuarios/:id", usuarioController.UsuarioDelete);
 router.post("/tarefas/Cadastrar", tarefaController.TarefaCreate);
 
 //listar
-router.get("/tarefas/:id?", tarefaController.TarefaRead);
+router.get("/tarefas/:id?", tarefaController.TarefaListar);
 
 //update
 router.put("/tarefas/:id", tarefaController.TarefaUpdate);

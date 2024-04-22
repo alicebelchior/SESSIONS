@@ -13,11 +13,11 @@
             <th>{{this.id_tarefa}}</th>
             <th>{{this.titulo}}</th>
             <th>{{this.descricao}}</th>
-            <th><a href="/tarefas/alterar/{{this.id_tarefa}}">Editar<i
+            <th><a href="/tarefas/Atualizar/{{this.id_tarefa}}/{{this.titulo}}/{{this.descricao}}">Editar<i
                   class="bi bi-pencilsquare"
                 ></i></a></th>
             <th>
-              <form class="borde-0 m-0" action="/tarefas/remover" method="POST">
+              <form class="borde-0 m-0" action="/tarefas/Delete" method="POST">
                 <input
                   type="hidden"
                   name="id_tarefa"
